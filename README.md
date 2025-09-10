@@ -1,298 +1,326 @@
-# xsukax RSS Search
+# xsukax RSS Search CLI & GUI
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
+A powerful, privacy-focused RSS feed search tool that enables users to search multiple RSS/Atom feeds simultaneously for specific keywords. The application supports both Arabic and English text with intelligent Unicode normalization and offers both command-line and modern graphical interfaces.
 
-A powerful, privacy-focused RSS keyword search tool that aggregates content from multiple feeds and generates beautiful, Apple-style HTML reports. Designed with security, performance, and multilingual support in mind.
+## Project Overview
 
-## 🔍 Project Overview
+xsukax RSS Search is a comprehensive solution for monitoring and searching RSS feeds across multiple sources. The tool reads feed URLs from a simple text configuration file, fetches content concurrently for optimal performance, and provides sophisticated keyword matching with support for multilingual content. Results are presented through both a modern GUI interface and beautifully formatted HTML reports with Apple-inspired design.
 
-**xsukax RSS Search** is a sophisticated command-line application that enables users to search across multiple RSS and Atom feeds for specific keywords, generating comprehensive HTML reports with modern, responsive design. The tool excels at processing both English and Arabic content through advanced Unicode normalization, making it ideal for multilingual news monitoring, research, and content aggregation.
+### Core Capabilities
 
-### Key Capabilities
+- **Multi-source RSS/Atom feed aggregation** from user-configurable sources
+- **Intelligent keyword search** with Arabic and English text normalization
+- **Concurrent feed processing** for enhanced performance
+- **Flexible search options** (title-only, description-only, or both)
+- **Multiple match modes** (ANY or ALL keywords)
+- **Modern GUI interface** with dark/light theme support
+- **Professional HTML report generation** with responsive design
+- **Cross-platform compatibility** (Windows, macOS, Linux)
 
-- **Multi-feed aggregation**: Search across unlimited RSS/Atom feeds simultaneously
-- **Intelligent keyword matching**: Support for partial matching with Arabic and English text normalization
-- **Flexible search modes**: Match ANY or ALL keywords across titles, descriptions, or both
-- **High-performance processing**: Concurrent feed fetching with configurable timeout and thread limits
-- **Professional output**: Generate Apple-inspired HTML reports with dark mode support
-- **Deduplication**: Automatic removal of duplicate articles across feeds
-- **Chronological sorting**: Results ordered by publication date (newest first)
+## Security and Privacy Benefits
 
-## 🔒 Security and Privacy Benefits
+### Local Processing Architecture
+- **Zero external data transmission**: All processing occurs locally on your machine
+- **No cloud dependencies**: RSS feeds are fetched directly without intermediary services
+- **Private keyword searches**: Search terms never leave your device
+- **No user tracking**: Application contains no analytics or telemetry components
 
-### Privacy-First Architecture
-- **100% Local Processing**: All data processing occurs locally on your machine—no external services receive your search queries or feed data
-- **No Data Transmission**: Your search keywords and results never leave your system
-- **Zero Tracking**: No analytics, telemetry, or user behavior monitoring
-- **Offline Capability**: Works entirely offline after initial feed fetching
+### Data Protection Features
+- **Input validation**: Comprehensive sanitization of all user inputs and feed content
+- **Safe HTML rendering**: Proper escaping prevents XSS vulnerabilities in generated reports
+- **Responsible web scraping**: Implements proper User-Agent headers and timeout mechanisms
+- **Error isolation**: Robust exception handling prevents data leakage through error messages
+- **Secure file operations**: Safe file I/O with proper encoding and path validation
 
-### Security Measures
-- **Input Sanitization**: All HTML output is properly escaped to prevent XSS attacks
-- **Safe File Handling**: Robust file I/O with proper encoding and error handling
-- **Request Security**: Custom User-Agent and configurable timeouts prevent hanging requests
-- **Error Isolation**: Failed feeds don't compromise the entire search operation
-- **Memory Safety**: Efficient memory usage with streaming processing of large feeds
+### Privacy-First Design
+- **Configurable feed sources**: Users maintain complete control over data sources
+- **Local storage only**: All configuration and results stored exclusively on user's device
+- **No external dependencies**: Core functionality operates without internet connectivity to third-party services
+- **Transparent operation**: Open-source codebase allows full security audit
 
-### Data Protection
-- **No Persistent Storage**: Search results are only saved when explicitly requested
-- **Configurable Output**: Choose your own output location and filename patterns
-- **Clean Exit**: Graceful shutdown with proper resource cleanup
+## Features and Advantages
 
-## ✨ Features and Advantages
+### Advanced Text Processing
+- **Unicode normalization** for accurate Arabic and English text matching
+- **Intelligent character mapping** (alef forms, diacritics removal, tatweel handling)
+- **Case-insensitive matching** with cultural sensitivity
+- **Flexible keyword parsing** supporting comma and newline delimiters
 
-### 🌐 Multilingual Excellence
-- **Arabic Text Support**: Advanced Unicode normalization for Arabic script
-- **Diacritic Handling**: Intelligent removal of Arabic diacritics for better matching
-- **Alef Normalization**: Automatic handling of different Alef forms in Arabic
-- **Mixed Language**: Seamless support for Arabic-English mixed content
+### Performance Optimization
+- **Concurrent feed fetching** with configurable thread pools
+- **Duplicate detection** prevents redundant results
+- **Memory-efficient processing** suitable for large feed collections
+- **Configurable timeout controls** for reliable network operations
 
-### ⚡ Performance Optimized
-- **Concurrent Processing**: Multi-threaded feed fetching (default: 16 concurrent connections)
-- **Intelligent Timeouts**: Configurable request timeouts prevent hanging
-- **Memory Efficient**: Streaming processing of large feeds
-- **Deduplication**: Automatic removal of duplicate articles across feeds
+### User Experience Excellence
+- **Modern GUI interface** with professional appearance
+- **Feed management system** with add/edit/remove/import capabilities
+- **Real-time progress indication** with cancellation support
+- **Responsive design** adapting to different screen sizes
+- **Context-sensitive help** and error messaging
 
-### 🎨 Beautiful Output
-- **Apple-Style Design**: Modern, clean HTML reports inspired by Apple's design language
-- **Responsive Layout**: Perfect display on desktop, tablet, and mobile devices
-- **Dark Mode Support**: Automatic dark/light theme detection
-- **Visual Hierarchy**: Clear typography and spacing for optimal readability
-- **Interactive Elements**: Hover effects and smooth transitions
+### Output and Reporting
+- **Apple-inspired HTML design** with dark/light mode support
+- **Mobile-responsive layouts** for cross-device compatibility
+- **Structured metadata display** including source attribution and timestamps
+- **Export functionality** for sharing and archiving results
+- **Preview capabilities** for immediate result verification
 
-### 🔧 Developer-Friendly
-- **Command-Line Interface**: Full automation support with comprehensive CLI options
-- **Interactive Mode**: User-friendly prompts for manual operation
-- **Flexible Configuration**: Customizable search parameters and output options
-- **Error Reporting**: Detailed error messages and graceful failure handling
-
-## 📦 Installation Instructions
+## Installation Instructions
 
 ### Prerequisites
-- **Python 3.6 or higher**
-- **pip** (Python package installer)
+- **Python 3.6 or higher** (recommended: Python 3.8+)
+- **Internet connection** for RSS feed access
+- **Modern web browser** for HTML report viewing
 
-### Step 1: Clone the Repository
+### Automated Installation (Recommended)
+
+#### Windows Users
+1. Download the repository or clone it:
+   ```bash
+   git clone https://github.com/xsukax/xsukax-RSS-Search-CLI-GUI.git
+   cd xsukax-RSS-Search-CLI-GUI
+   ```
+
+2. Run the Windows launcher:
+   ```cmd
+   windows_launcher.bat
+   ```
+
+#### macOS/Linux Users
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/xsukax/xsukax-RSS-Search-CLI-GUI.git
+   cd xsukax-RSS-Search-CLI-GUI
+   ```
+
+2. Run the Python launcher:
+   ```bash
+   python3 launcher.py
+   ```
+
+The launcher will automatically:
+- Verify Python version compatibility
+- Check for required dependencies
+- Install missing packages via pip
+- Create sample configuration files
+- Launch the GUI application
+
+### Manual Installation
+
+1. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Verify installation**:
+   ```bash
+   python -c "import feedparser, requests, tkinter; print('All dependencies installed successfully')"
+   ```
+
+3. **Create feeds configuration**:
+   ```bash
+   cp feeds.txt.example feeds.txt  # Edit with your preferred RSS feeds
+   ```
+
+## Usage Guide
+
+### Quick Start with GUI
+
+1. **Launch the application**:
+   ```bash
+   python launcher.py
+   # or
+   python xsukax_rss_search_gui.py
+   ```
+
+2. **Configure RSS feeds**:
+   - Use the built-in feed manager to add RSS/Atom URLs
+   - Import existing feed lists from text files
+   - Test feeds to verify accessibility
+
+3. **Perform searches**:
+   - Enter keywords (Arabic or English supported)
+   - Select search field (title, description, or both)
+   - Choose match mode (any keyword or all keywords)
+   - Click "Search RSS Feeds"
+
+4. **Review results**:
+   - Browse results in the integrated viewer
+   - Click articles to open in browser
+   - Export results to HTML for sharing
+
+### Command Line Interface
+
 ```bash
-git clone https://github.com/xsukax/xsukax-RSS-Search.git
-cd xsukax-RSS-Search
+# Basic search with interactive prompts
+python xsukax_rss_search.py
+
+# Advanced search with parameters
+python xsukax_rss_search.py \
+  --keywords "technology, AI, machine learning" \
+  --field both \
+  --mode any \
+  --output tech_news_report.html \
+  --max 50
 ```
 
-### Step 2: Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+#### Command Line Parameters
 
-Or install dependencies manually:
-```bash
-pip install feedparser requests
-```
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `--keywords, -k` | Comma-separated search keywords | Interactive prompt |
+| `--field, -f` | Search field: title, description, both | both |
+| `--mode, -m` | Match mode: any, all | any |
+| `--output, -o` | Output HTML filename | Auto-generated |
+| `--feeds-file, -F` | Path to feeds configuration | feeds.txt |
+| `--timeout` | Request timeout in seconds | 12 |
+| `--concurrency, -c` | Concurrent request limit | 16 |
+| `--max` | Maximum results to display | unlimited |
 
-### Step 3: Make Script Executable (Linux/macOS)
-```bash
-chmod +x xsukax_rss_search.py
-```
-
-### Step 4: Create Feed Configuration
-The application will automatically create a sample `feeds.txt` file on first run, or you can create it manually:
-
-```bash
-touch feeds.txt
-```
-
-Add your RSS/Atom feed URLs (one per line):
-```
-# feeds.txt - RSS/Atom feeds configuration
-https://feeds.bbci.co.uk/news/rss.xml
-http://rss.cnn.com/rss/edition.rss
-https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
-# Lines starting with # are comments
-```
-
-## 🚀 Usage Guide
-
-### Basic Usage
-
-#### Interactive Mode
-```bash
-python3 xsukax_rss_search.py
-```
-The application will prompt you for:
-- Keywords (comma-separated)
-- Search field (title/description/both)
-- Match mode (any/all)
-
-#### Command-Line Mode
-```bash
-python3 xsukax_rss_search.py -k "artificial intelligence, machine learning" -f both -m any
-```
-
-### Advanced Options
-
-#### Complete Command-Line Interface
-```bash
-python3 xsukax_rss_search.py \
-  --keywords "climate change,global warming" \
-  --field description \
-  --mode all \
-  --output "climate_report.html" \
-  --feeds-file "custom_feeds.txt" \
-  --timeout 15 \
-  --concurrency 20 \
-  --max 100
-```
-
-### Command-Line Arguments
-
-| Argument | Short | Description | Default |
-|----------|-------|-------------|---------|
-| `--keywords` | `-k` | Comma-separated keywords | Interactive prompt |
-| `--field` | `-f` | Search field: `title`, `description`, `both` | `both` |
-| `--mode` | `-m` | Match mode: `any`, `all` | `any` |
-| `--output` | `-o` | Output HTML filename | Auto-generated |
-| `--feeds-file` | `-F` | Path to feeds configuration file | `feeds.txt` |
-| `--timeout` | | Request timeout in seconds | `12` |
-| `--concurrency` | `-c` | Maximum concurrent connections | `16` |
-| `--max` | | Maximum results to display | `0` (unlimited) |
-
-### Application Workflow
+### Application Architecture
 
 ```mermaid
 graph TD
-    A[Start Application] --> B{feeds.txt exists?}
-    B -->|No| C[Create sample feeds.txt]
-    C --> D[Exit with instructions]
-    B -->|Yes| E[Load RSS feed URLs]
-    E --> F{Keywords provided?}
-    F -->|No| G[Interactive prompt for keywords]
-    F -->|Yes| H[Parse and normalize keywords]
-    G --> H
-    H --> I[Configure search parameters]
-    I --> J[Concurrent feed fetching]
-    J --> K[Parse RSS/Atom content]
-    K --> L[Apply keyword matching]
-    L --> M[Deduplicate results]
-    M --> N[Sort by publication date]
-    N --> O[Generate HTML report]
-    O --> P[Save output file]
-    P --> Q[Display summary]
-    Q --> R[End]
+    A[User Input] --> B{Interface Type}
+    B -->|GUI| C[Tkinter GUI]
+    B -->|CLI| D[Command Line]
     
-    style A fill:#e1f5fe
-    style J fill:#fff3e0
-    style O fill:#f3e5f5
-    style R fill:#e8f5e8
+    C --> E[Feed Manager]
+    C --> F[Search Options]
+    C --> G[Results Viewer]
+    
+    D --> H[Argument Parser]
+    H --> I[Interactive Prompts]
+    
+    E --> J[feeds.txt Parser]
+    F --> K[Keyword Processor]
+    G --> L[HTML Renderer]
+    I --> K
+    
+    J --> M[RSS Feed URLs]
+    M --> N[Concurrent Fetcher]
+    N --> O[feedparser]
+    O --> P[Entry Filter]
+    
+    K --> Q[Unicode Normalizer]
+    Q --> R[Pattern Matcher]
+    R --> P
+    
+    P --> S[Result Aggregator]
+    S --> T[Date Sorter]
+    T --> U[Duplicate Remover]
+    U --> L
+    
+    L --> V[HTML Report]
+    L --> W[Browser Preview]
 ```
 
-### Search Process Flow
+### Search Workflow
 
 ```mermaid
 sequenceDiagram
-    participant User
-    participant App
-    participant Feeds
-    participant Parser
-    participant Output
+    participant U as User
+    participant GUI as GUI Interface
+    participant FM as Feed Manager
+    participant SE as Search Engine
+    participant RV as Results Viewer
     
-    User->>App: Provide keywords & config
-    App->>Feeds: Fetch RSS feeds (concurrent)
-    Feeds-->>App: Return feed content
-    App->>Parser: Process & normalize text
-    Parser->>Parser: Apply keyword matching
-    Parser->>Parser: Deduplicate results
-    Parser-->>App: Return matched articles
-    App->>Output: Generate HTML report
-    Output-->>User: Beautiful HTML file
+    U->>GUI: Launch Application
+    GUI->>FM: Load feeds.txt
+    FM->>GUI: Display configured feeds
+    
+    U->>GUI: Enter search keywords
+    U->>GUI: Select search options
+    U->>GUI: Click "Search"
+    
+    GUI->>SE: Start search with parameters
+    SE->>SE: Fetch feeds concurrently
+    SE->>SE: Parse RSS/Atom content
+    SE->>SE: Apply keyword filters
+    SE->>SE: Remove duplicates
+    SE->>SE: Sort by date
+    
+    SE->>RV: Return processed results
+    RV->>GUI: Display results table
+    RV->>GUI: Update status information
+    
+    U->>RV: Select article
+    RV->>RV: Show article details
+    
+    U->>RV: Export to HTML
+    RV->>RV: Generate report
+    RV->>U: Save HTML file
 ```
 
-### Example Use Cases
+### Configuration Management
 
-#### 1. News Monitoring
-```bash
-python3 xsukax_rss_search.py -k "cybersecurity,data breach" -f title -m any
+#### Feed Configuration (feeds.txt)
+```
+# RSS/Atom feeds - one URL per line
+# Lines starting with # are comments
+
+# News Sources
+https://feeds.bbci.co.uk/news/rss.xml
+https://rss.cnn.com/rss/edition.rss
+
+# Technology
+https://feeds.feedburner.com/TechCrunch
+https://rss.slashdot.org/Slashdot/slashdot
+
+# Custom feeds
+https://your-custom-feed.com/rss.xml
 ```
 
-#### 2. Research Aggregation
-```bash
-python3 xsukax_rss_search.py -k "renewable energy" -f both -m all --max 50
-```
+#### Advanced Configuration Options
+- **Timeout settings**: Adjust network timeouts for slow feeds
+- **Concurrency limits**: Control simultaneous connections
+- **Result limitations**: Cap maximum results for performance
+- **Output customization**: Modify HTML template styling
 
-#### 3. Arabic Content Search
-```bash
-python3 xsukax_rss_search.py -k "الذكاء الاصطناعي,التكنولوجيا" -f description
-```
+## Troubleshooting
 
-#### 4. Custom Feed File
-```bash
-python3 xsukax_rss_search.py -k "bitcoin,cryptocurrency" -F crypto_feeds.txt
-```
+### Common Issues
 
-### Output Format
+1. **Import errors**: Ensure all dependencies are installed via `pip install -r requirements.txt`
+2. **GUI not launching**: Verify tkinter is available (included with most Python installations)
+3. **Feed access failures**: Check internet connectivity and feed URL validity
+4. **Permission errors**: Ensure write access to application directory for configuration files
 
-The generated HTML report includes:
+### Performance Optimization
 
-- **Header Section**: Search parameters, feed count, and result statistics
-- **Responsive Grid**: Article cards with titles, sources, dates, and excerpts
-- **Visual Indicators**: Color-coded status information
-- **Error Reporting**: Clear indication of failed feeds
-- **Modern Styling**: Apple-inspired design with dark mode support
+- **Reduce concurrency** for systems with limited resources
+- **Increase timeout values** for slow network connections
+- **Limit result count** for large feed collections
+- **Use SSD storage** for improved file I/O performance
 
-### Configuration Tips
+## Licensing Information
 
-#### Optimizing Performance
-- **Concurrency**: Increase `--concurrency` for faster processing (default: 16)
-- **Timeout**: Adjust `--timeout` based on network conditions (default: 12s)
-- **Feed Selection**: Use high-quality, fast-responding feeds
+This project is licensed under the **GNU General Public License v3.0** (GPL-3.0). This license ensures that:
 
-#### Improving Search Quality
-- **Keyword Strategy**: Use specific terms for better precision
-- **Field Selection**: Search titles for headlines, descriptions for detailed content
-- **Match Mode**: Use "all" for precise matching, "any" for broader results
+### Your Rights
+- **Freedom to use**: Run the software for any purpose
+- **Freedom to study**: Examine and understand how the software works
+- **Freedom to share**: Distribute copies to help others
+- **Freedom to improve**: Modify the software and share improvements
 
-## 📜 Licensing Information
+### License Requirements
+- **Source code availability**: Any distributed modifications must include source code
+- **License preservation**: GPL-3.0 license must be maintained in derivative works
+- **Copyleft protection**: Ensures the software remains free and open-source
 
-This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.
+### For Contributors
+- Contributions are welcome under the same GPL-3.0 terms
+- By contributing, you agree to license your contributions under GPL-3.0
+- All contributors retain copyright to their individual contributions
 
-### What This License Means
+### For Users
+- No warranty is provided with this software
+- Use at your own risk in compliance with local laws
+- Commercial use is permitted under GPL-3.0 terms
 
-#### ✅ You Are Free To:
-- **Use** the software for any purpose, including commercial use
-- **Study** the source code and understand how it works
-- **Modify** the software to suit your needs
-- **Distribute** copies of the original software
-- **Distribute** modified versions of the software
-
-#### 📋 Your Obligations:
-- **Share Source Code**: If you distribute the software (modified or unmodified), you must provide the source code
-- **Same License**: Any derivative works must be licensed under GPL-3.0
-- **Copyright Notice**: Preserve copyright notices and license information
-- **Disclose Changes**: Clearly indicate any modifications you make
-
-#### 🔒 Protections:
-- **No Warranty**: The software is provided "as-is" without warranties
-- **Liability Protection**: Authors are not liable for damages
-- **Patent Protection**: The license includes patent protection clauses
-
-### Full License Text
-The complete license text is available in the [LICENSE](LICENSE) file included with this repository, or online at: https://www.gnu.org/licenses/gpl-3.0.html
-
-### Why GPL-3.0?
-We chose GPL-3.0 to ensure that this privacy-focused tool remains free and open source, guaranteeing that all users can access, audit, and improve the code while preventing proprietary derivatives that could compromise user privacy.
+For the complete license text, see the [LICENSE](LICENSE) file in the repository root or visit: https://www.gnu.org/licenses/gpl-3.0.html
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please read our contributing guidelines and ensure all contributions comply with the GPL-3.0 license.
-
-## 📞 Support
-
-For issues, questions, or suggestions, please open an issue on our GitHub repository.
-
-## 🌟 Acknowledgments
-
-Built with Python, leveraging the excellent `feedparser` and `requests` libraries. Inspired by Apple's design philosophy and the open-source community's commitment to privacy and security.
-
----
-
-**Made with ❤️ for the open-source community**
+**Developed with privacy and security in mind** | **Support open-source software** | **GPL-3.0 Licensed**
