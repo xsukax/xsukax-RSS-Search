@@ -1,0 +1,15 @@
+# xsukax RSS Search GUI Requirements
+# Core dependencies for RSS processing
+feedparser>=6.0.10
+requests>=2.28.0
+
+# Optional dependencies for enhanced functionality
+# Uncomment if needed:
+# pillow>=9.0.0          # For image handling in GUI
+# beautifulsoup4>=4.11.0 # For enhanced HTML parsing
+# lxml>=4.9.0            # For faster XML parsing
+
+# Development dependencies (optional)
+# pytest>=7.0.0          # For testing
+# black>=22.0.0          # For code formatting
+# flake8>=5.0.0          # For linting
